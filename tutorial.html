@@ -1226,6 +1226,23 @@ window.addEventListener('scroll', () => {
     footer.classList.add('visible');
   }
 });
+
+   // Automatically highlight the current page in the navbar
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.split("/").pop(); // e.g. "about.html"
+    const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute("href");
+
+      // Exact match OR partial match (for subfolders)
+      if (linkHref === currentPath || currentPath.includes(linkHref)) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
 </script>
 
 <script>
@@ -1292,3 +1309,4 @@ window.addEventListener('scroll', () => {
 
 
 </body>
+
