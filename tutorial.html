@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medify - Contact Us</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --nav-bg: rgba(255, 255, 255, 0.85);
+      --page-bg: #f6f8fb;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --accent: #60a5fa;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --transition: 0.35s ease;
+      --radius: 14px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Poppins", sans-serif;
+      background: var(--page-bg);
+      color: var(--text-dark);
+    }
+
+    /* Navbar container */
+    .navbar-premium {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 25px rgba(0, 0, 0, 0.08);
+      transition: background var(--transition), box-shadow var(--transition);
+      animation: navbarEnter 0.8s ease forwards;
+    }
+
+    @keyframes navbarEnter {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Brand logo */
+    .navbar-brand {
+      position: relative;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.3px;
+      overflow: hidden;
+      transition: color var(--transition), transform var(--transition);
+    }
+
+    .navbar-brand i {
+      font-size: 1.4rem;
+      transition: transform 0.4s ease, color var(--transition);
+    }
+
+    /* Hover shine */
+    .navbar-brand::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: skewX(-20deg);
+      transition: 0.6s;
+    }
+
+    .navbar-brand:hover::after {
+      left: 130%;
+    }
+
+    /* Hover glow */
+    .navbar-brand:hover {
+      color: var(--primary-dark);
+      transform: scale(1.05);
+      text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+    }
+
+    .navbar-brand:hover i {
+      transform: rotate(10deg) scale(1.1);
+      color: var(--accent);
+    }
+
+    /* Click ripple */
+    .navbar-brand:active {
+      transform: scale(0.97);
+      transition: transform 0.1s ease;
+    }
+
+    /* Nav links */
+    .navbar-premium .nav-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      margin: 0 0.5rem;
+      position: relative;
+      transition: color var(--transition), transform var(--transition);
+    }
+
+    .navbar-premium .nav-link:hover,
+    .navbar-premium .nav-link.active {
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .navbar-premium .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width var(--transition);
+    }
+
+    .navbar-premium .nav-link:hover::after,
+    .navbar-premium .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+      border: none;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 30px rgba(37, 99, 235, 0.1);
+      animation: dropdownFade 0.3s ease forwards;
+    }
+
+    @keyframes dropdownFade {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown-item {
+      color: var(--text-muted);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .dropdown-item:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Search bar */
+    .form-control {
+      border-radius: 25px;
+      border: 1.5px solid var(--accent);
+      padding: 0.45rem 1rem;
+      font-size: 0.95rem;
+      transition: all var(--transition);
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.15);
+      border-color: var(--primary);
+    }
+
+    .btn-search {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      color: white;
+      border-radius: 25px;
+      padding: 0.45rem 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: all var(--transition);
+    }
+
+    .btn-search:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      transform: translateY(-1px);
+    }
+
+    /* Toggler */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(40%) sepia(100%) saturate(350%) hue-rotate(190deg);
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+      transform: rotate(90deg);
+    }
+
+    /* Mobile layout */
+    @media (max-width: 991px) {
+      .navbar-nav {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: var(--radius);
+        padding: 1rem 0;
+        margin-top: 1rem;
+      }
+
+      .nav-link {
+        margin: 0.3rem 0;
+      }
+    }
+
+    /* =================== PREMIUM FOOTER =================== */
+    .footer {
+      position: relative;
+      background: radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 100%);
+      color: #e2e8f0;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border-top: 3px solid rgba(96, 165, 250, 0.4);
+    }
+
+    /* Soft animated overlay */
+    .footer-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.2), transparent 70%),
+                  radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent 70%);
+      animation: floatLights 10s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes floatLights {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand h3 {
+      color: #93c5fd;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-shadow: 0 0 10px rgba(96,165,250,0.4);
+    }
+
+    .footer-brand p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Social icons */
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-right: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      color: #93c5fd;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .social-links a:hover {
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      color: white;
+      transform: translateY(-4px) scale(1.1);
+      box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+    }
+
+    /* Titles */
+    .footer-title {
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .footer-title::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #60a5fa, #2563eb);
+      border-radius: 2px;
+    }
+
+    /* Links */
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .footer-links a::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 1.5px;
+      background: linear-gradient(90deg, #60a5fa, #2563eb);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #93c5fd;
+    }
+
+    .footer-links a:hover::before {
+      width: 100%;
+    }
+
+    /* Newsletter */
+    .newsletter-form {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.1rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form input:focus {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 8px rgba(96,165,250,0.4);
+    }
+
+    .newsletter-form button {
+      position: absolute;
+      right: 8px;
+      border: none;
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      color: white;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 6px 15px rgba(59,130,246,0.5);
+    }
+
+    /* Divider */
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 2rem 0;
+    }
+
+    /* Bottom bar */
+    .footer-bottom p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-legal a {
+      color: #93c5fd;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-legal a:hover {
+      color: white;
+      text-shadow: 0 0 6px rgba(96,165,250,0.6);
+    }
+
+    /* Floating glow effect */
+    .footer::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(96,165,250,0.3), transparent 70%);
+      filter: blur(60px);
+      animation: floatGlow 8s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translateY(0); opacity: 0.6; }
+      100% { transform: translateY(20px); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-brand h3 { font-size: 1.4rem; }
+      .footer-title { margin-top: 1rem; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .contact-card, .contact-form {
+        padding: 1.5rem;
+      }
+    }
+
+/* ============================================================
+   TUTORIALS PAGE CONTENT SECTION (Hero + Grid + Animations)
+   ============================================================ */
+
+/* -------------------- HERO SECTION -------------------- */
+.tutorial-hero.centered {
+  padding: clamp(56px, 7vw, 92px) 0 clamp(28px, 4vw, 44px);
+  text-align: center;
+  background:
+    radial-gradient(1100px 360px at 10% -10%, rgba(96,165,250,.12), transparent 40%),
+    radial-gradient(900px 300px at 90% 0%, rgba(37,99,235,.10), transparent 45%),
+    linear-gradient(180deg, #f6f8fb, #eef3ff);
+}
+
+.section-title {
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0 0 .25rem;
+  letter-spacing: .2px;
+  font-size: clamp(1.8rem, 1.1rem + 2.2vw, 2.6rem);
+}
+
+.brand-accent {
+  color: var(--primary-dark);
+  text-shadow: 0 0 12px rgba(96,165,250,.28);
+}
+
+.hero-kicker {
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: .2px;
+  font-size: clamp(1.1rem, .5rem + 1.2vw, 1.5rem);
+  margin: .25rem 0 .35rem;
+}
+
+.hero-lead {
+  max-width: 820px;
+  margin: 0 auto 1.1rem;
+  color: #334155;
+  font-size: clamp(.98rem, .8rem + .4vw, 1.05rem);
+  line-height: 1.6;
+}
+
+.how-it-works {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0 1.25rem;
+}
+
+.how-it-works li {
+  background: #fff;
+  border: 1px solid rgba(147,197,253,.35);
+  border-radius: 16px;
+  padding: .68rem 1rem;
+  box-shadow: 0 8px 22px rgba(15,23,42,.06);
+  color: #0f172a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.how-it-works li span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+/* -------------------- SEARCH + FILTERS -------------------- */
+.tutorial-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(147,197,253,.45);
+  border-radius: 999px;
+  padding: .4rem .9rem;
+  box-shadow: 0 10px 28px rgba(15,23,42,.05);
+  width: 100%;
+}
+
+.input-wrap i {
+  margin-right: .45rem;
+  color: #64748b;
+}
+
+#tutorialSearch {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chip {
+  border: none;
+  cursor: pointer;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9rem;
+  color: #1e40af;
+  background: rgba(96,165,250,.18);
+  border: 1px solid rgba(96,165,250,.28);
+  transition: transform .15s ease, background .2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  background: rgba(96,165,250,.24);
+}
+
+.chip.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-color: transparent;
+}
+
+.result-count {
+  grid-column: 1 / -1;
+  color: #475569;
+  font-size: .95rem;
+  text-align: left;
+}
+
+/* -------------------- GRID & CARDS -------------------- */
+.tutorial-grid-wrap {
+  padding: 16px 0 86px;
+}
+
+.tutorial-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media (max-width: 575.98px) { .tutorial-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 576px) { .tutorial-grid { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 992px) { .tutorial-grid { grid-template-columns: repeat(12, 1fr); } }
+
+.t-card {
+  grid-column: span 6;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(147,197,253,.38);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 32px rgba(15,23,42,.09);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  position: relative;
+}
+
+@media (min-width: 576px) { .t-card { grid-column: span 3; } }
+@media (min-width: 992px) { .t-card { grid-column: span 4; } }
+
+.t-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59,130,246,.58);
+  box-shadow: 0 22px 54px rgba(37,99,235,.20);
+}
+
+.t-media {
+  position: relative;
+  height: clamp(210px, 26vw, 260px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.t-media img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  transition: transform .35s ease;
+}
+
+.t-card:hover .t-media img {
+  transform: scale(1.06) translateY(-2px);
+}
+
+.play {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 12px 24px rgba(37,99,235,.40);
+  font-size: 0.9rem;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  z-index: 2;
+  font-size: .78rem;
+  font-weight: 800;
+  color: #fff;
+  padding: .34rem .6rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(37,99,235,.28);
+}
+
+.badge-cat { left: 12px; background: linear-gradient(135deg, #1e3a8a, #60a5fa); }
+.badge-time { right: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+.t-info {
+  padding: 14px 16px 16px;
+}
+
+.t-info h3 {
+  font-size: clamp(1.02rem, .9rem + .4vw, 1.18rem);
+  line-height: 1.22;
+  margin: 0 0 .4rem;
+  color: #1e40af;
+  font-weight: 800;
+}
+
+.t-info p {
+  margin: 0 0 .6rem;
+  color: #334155;
+  font-size: .98rem;
+  line-height: 1.5;
+}
+
+.meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #475569;
+  font-size: .92rem;
+}
+
+.meta i {
+  margin-right: 6px;
+  color: #60a5fa;
+}
+
+/* -------------------- HELP BOX -------------------- */
+.help-box {
+  margin: 20px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: #0f172a;
+  background: #fff;
+  border: 1px solid rgba(147,197,253,.35);
+  box-shadow: 0 10px 26px rgba(15,23,42,.06);
+  font-size: 0.95rem;
+}
+
+.help-box i {
+  color: #2563eb;
+  margin-right: 8px;
+}
+
+.help-box a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.help-box a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- POP-IN ANIMATIONS -------------------- */
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(10px) scale(.98); }
+  60% { opacity: 1; transform: translateY(0) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.pop {
+  opacity: 0;
+  animation: popIn .65s var(--transition) forwards;
+}
+
+.pop.delay-0 { animation-delay: .0s; }
+.pop.delay-1 { animation-delay: .08s; }
+.pop.delay-2 { animation-delay: .16s; }
+.pop.delay-3 { animation-delay: .24s; }
+.pop.delay-4 { animation-delay: .32s; }
+
+/* -------------------- SCROLL REVEAL -------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s var(--transition), transform .6s var(--transition);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .tutorial-controls {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    justify-items: center;
+  }
+
+  .chip-row {
+    justify-content: center;
+  }
+
+  .t-info p {
+    font-size: .9rem;
+  }
+
+  .hero-lead {
+    padding: 0 10px;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg navbar-premium sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-globe"></i> Medify
+      </a>
+
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+  <li class="nav-item"><a id="navHome" class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i><span>Home</span></a></li>
+  <li class="nav-item"><a id="navTutorial" class="nav-link" href="Tutorial.html"><i class="bi bi-book-half me-1"></i><span>Tutorial</span></a></li>
+  <li class="nav-item"><a id="navAbout" class="nav-link" href="about.html"><i class="fa-solid fa-user me-1"></i><span>About</span></a></li>
+  <li class="nav-item"><a id="navContact" class="nav-link active" href="contact.html"><i class="fa-solid fa-envelope me-1"></i><span>Contact</span></a></li>
+
+  <!-- Language switcher -->
+  <li class="nav-item dropdown ms-lg-3">
+    <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-translate me-1"></i><span id="currentLangLabel">English</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+      <li><button class="dropdown-item lang-option" data-lang="en">English</button></li>
+      <li><button class="dropdown-item lang-option" data-lang="ku">کوردی</button></li>
+      <li><button class="dropdown-item lang-option" data-lang="ar">العربية</button></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- keep your search form after this -->
+<form class="d-flex ms-lg-3 mt-3 mt-lg-0">
+  <input id="navSearchInput"
+         class="form-control me-2"
+         type="search"
+         placeholder="Search..."
+         aria-label="Search"
+         data-i18n-placeholder="contact.nav.search" />
+  <button class="btn-search" type="submit" data-i18n="contact.nav.searchButton">Search</button>
+</form>
+</div>
+</div>
+</nav>
+
+<!-- ===================== TUTORIALS: HERO (CENTERED) ===================== -->
+<section class="tutorial-hero centered">
+  <div class="container">
+    <h1 class="section-title pop delay-0">
+      Learn with <span class="brand-accent">Medify</span>
+    </h1>
+    <p class="hero-kicker pop delay-1">Official step-by-step tutorials for every product we sell</p>
+
+    <p class="hero-lead pop delay-2">
+      Pick your product and watch a short, beginner-friendly video made by <strong>Medify</strong>.  
+      We’ll show you how to <em>unbox, set up, use, clean</em> and <em>care</em> for your device — safely and clearly.
+    </p>
+
+    <ol class="how-it-works centered-list pop delay-3" aria-label="How tutorials work">
+      <li><span>1</span> Find your product</li>
+      <li><span>2</span> Click the card</li>
+      <li><span>3</span> Watch the official tutorial</li>
+    </ol>
+
+    <!-- Controls -->
+    <div class="tutorial-controls pop delay-4" role="region" aria-label="Search and filter tutorials">
+      <div class="input-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="tutorialSearch" type="search" placeholder="Search tutorials (e.g., stethoscope, oximeter)…" aria-label="Search tutorials">
+      </div>
+
+      <div class="chip-row" role="tablist" aria-label="Filter tutorials by category">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="diagnostics" role="tab" aria-selected="false">Diagnostics</button>
+        <button class="chip" data-filter="monitoring" role="tab" aria-selected="false">Monitoring</button>
+        <button class="chip" data-filter="accessories" role="tab" aria-selected="false">Accessories</button>
+        <button class="chip" data-filter="care" role="tab" aria-selected="false">Care &amp; Safety</button>
+      </div>
+      <div class="result-count"></div>
+    </div>
+  </div>
+</section>
+<!-- ===================== TUTORIALS: GRID ===================== -->
+<section class="tutorial-grid-wrap">
+  <div class="container">
+    <div id="tutorialGrid" class="tutorial-grid" aria-live="polite">
+
+         <!-- EXAMPLE CARD: Stethoscope -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Digital Blood Pressure — Quick Start"
+         data-tags="diagnostics blood pressure bp monitor beginner setup"
+         data-cat="diagnostics" data-time="2:11" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/realistic-medical-stethoscope-on-transparent-background-free-png.webp" alt="Tutorial thumbnail for Digital Blood Pressure monitor">
+          <span class="badge badge-cat">Diagnostics</span>
+          <span class="badge badge-time">4:12</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Digital Blood Pressure — Quick Start</h3>
+          <p>Unbox, fit the cuff, sit correctly, and read results confidently.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- EXAMPLE CARD: Digital Blood Pressure -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Digital Blood Pressure — Quick Start"
+         data-tags="diagnostics blood pressure bp monitor beginner setup"
+         data-cat="diagnostics" data-time="4:12" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Digital Blood Presure.png" alt="Tutorial thumbnail for Digital Blood Pressure monitor">
+          <span class="badge badge-cat">Diagnostics</span>
+          <span class="badge badge-time">4:12</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Digital Blood Pressure — Quick Start</h3>
+          <p>Unbox, fit the cuff, sit correctly, and read results confidently.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Pulse Oximeter -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Pulse Oximeter — Read SpO₂ the Right Way"
+         data-tags="monitoring pulse oximeter oxygen spo2 finger tips quick"
+         data-cat="monitoring" data-time="3:05" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Pulse Oximeter.png" alt="Tutorial thumbnail for Pulse Oximeter">
+          <span class="badge badge-cat">Monitoring</span>
+          <span class="badge badge-time">3:05</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Pulse Oximeter — Read SpO₂ the Right Way</h3>
+          <p>Finger placement, resting tips, and avoiding sensor errors.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Manual BP (Aneroid) -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Manual BP — Master the Cuff & Gauge"
+         data-tags="diagnostics manual blood pressure aneroid korotkoff cuff gauge"
+         data-cat="diagnostics" data-time="5:20" data-level="Intermediate">
+        <div class="t-media">
+          <img src="./img/bloodPressure.png" alt="Tutorial thumbnail for Manual Blood Pressure">
+          <span class="badge badge-cat">Diagnostics</span>
+          <span class="badge badge-time">5:20</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Manual BP — Master the Cuff &amp; Gauge</h3>
+          <p>Positioning, Korotkoff sounds, inflation/deflation timing.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Intermediate</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Stethoscope Care -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Stethoscope Care — Keep It Crystal Clear"
+         data-tags="accessories stethoscope cleaning care storage diaphragm tubing"
+         data-cat="accessories" data-time="2:41" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Stethoscope Bag.png" alt="Tutorial thumbnail for Stethoscope Care">
+          <span class="badge badge-cat">Accessories</span>
+          <span class="badge badge-time">2:41</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Stethoscope Care — Keep It Crystal Clear</h3>
+          <p>Clean the tubing, protect the diaphragm, and store safely.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Digital Thermometer -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Digital Thermometer — Accurate Readings"
+         data-tags="monitoring thermometer temperature fever child adult tips hygiene"
+         data-cat="monitoring" data-time="3:18" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Digital Thermometer.png" alt="Tutorial thumbnail for Digital Thermometer">
+          <span class="badge badge-cat">Monitoring</span>
+          <span class="badge badge-time">3:18</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Digital Thermometer — Accurate Readings</h3>
+          <p>When and where to measure, and sanitizing between uses.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Pulse Oximeter (pocket) -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Pocket Oximeter — Quick Tips"
+         data-tags="monitoring oximeter pocket battery care usage tips"
+         data-cat="monitoring" data-time="2:58" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Medical Tape Measure.png" alt="Tutorial thumbnail: Pocket Oximeter Tips">
+          <span class="badge badge-cat">Monitoring</span>
+          <span class="badge badge-time">2:58</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Pocket Oximeter — Quick Tips</h3>
+          <p>Battery, display meanings, and reading stability tricks.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Suturing Kit (care & safety) -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Suturing Kit — Safe Handling"
+         data-tags="care safety suturing kit organization sterilization"
+         data-cat="care" data-time="4:45" data-level="Intermediate">
+        <div class="t-media">
+          <img src="./img/suturing kit.png" alt="Tutorial thumbnail for Suturing Kit care">
+          <span class="badge badge-cat">Care &amp; Safety</span>
+          <span class="badge badge-time">4:45</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Suturing Kit — Safe Handling</h3>
+          <p>Instrument names, safe storage, and hygiene best practices.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Intermediate</li>
+          </ul>
+        </div>
+      </a>
+
+      <!-- Light Pen -->
+      <a class="t-card reveal" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+         data-title="Light Pen — Proper Neurological Checks"
+         data-tags="accessories light pen neuro pupil exam quick how to"
+         data-cat="accessories" data-time="2:36" data-level="Beginner">
+        <div class="t-media">
+          <img src="./img/Light Pen.png" alt="Tutorial thumbnail for Light Pen">
+          <span class="badge badge-cat">Accessories</span>
+          <span class="badge badge-time">2:36</span>
+          <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+        </div>
+        <div class="t-info">
+          <h3>Light Pen — Proper Neurological Checks</h3>
+          <p>Pupil response basics and when to replace batteries.</p>
+          <ul class="meta">
+            <li><i class="fa-regular fa-circle-check"></i> Official Medify tutorial</li>
+            <li><i class="fa-solid fa-signal"></i> Beginner</li>
+          </ul>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- help box -->
+    <div class="help-box">
+      <i class="fa-solid fa-circle-info"></i>
+      Video not opening? Make sure pop-ups are allowed for this site, or
+      <a href="contact.html">contact Medify Support</a>.
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= PREMIUM FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-overlay"></div>
+
+    <div class="container py-5">
+      <div class="row g-4">
+
+        <!-- BRAND / ABOUT -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <h3><i class="fa-solid fa-globe"></i> Medify</h3>
+            <p>Healing through innovation and care — Medify delivers advanced medical devices and solutions trusted by healthcare professionals worldwide.</p>
+            <p>Healing through innovation and care — Medify delivers advanced medical devices and solutions trusted by healthcare professionals worldwide.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT CATEGORIES -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <h5 class="footer-title">Categories</h5>
+          <ul class="footer-links">
+            <li><a href="#">Defibrillators</a></li>
+            <li><a href="#">Diagnostic Tools</a></li>
+            <li><a href="#">Surgical Supplies</a></li>
+            <li><a href="#">Infection Control</a></li>
+            <li><a href="#">Respiratory Care</a></li>
+          </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Stay Updated</h5>
+          <p>Subscribe to our newsletter for the latest medical tech insights and product updates.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+
+          <div class="footer-contact mt-4">
+            <p><i class="fa-solid fa-user-tie me-2"></i><strong>Managed by:</strong> Dr.Hassan Abdulwahid Hassan</p>
+            <p><i class="fa-solid fa-phone me-2"></i><strong>Phone:</strong> <a href="tel:07514591291">07514591291</a></p>
+            <p><i class="fab fa-instagram me-2"></i><strong>Instagram:</strong> <a href="#">Medify</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-0">© 2025 Medify. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+            integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+            integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+            crossorigin="anonymous"></script>
+
+    <script src = "lang.js"></script>
+    
+<script>
+  // Automatically highlight the current page in the navbar
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.split("/").pop(); // e.g. "about.html"
+    const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute("href");
+
+      // Exact match OR partial match (for subfolders)
+      if (linkHref === currentPath || currentPath.includes(linkHref)) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+
+  // Animate footer elements on scroll
+const footer = document.querySelector('.footer');
+window.addEventListener('scroll', () => {
+  const rect = footer.getBoundingClientRect();
+  if (rect.top < window.innerHeight - 100) {
+    footer.classList.add('visible');
+  }
+});
+</script>
+
+<script>
+(function(){
+  const grid = document.getElementById('tutorialGrid');
+  const search = document.getElementById('tutorialSearch');
+  const chips = document.querySelectorAll('.chip-row .chip');
+  const cards = Array.from(grid.querySelectorAll('.t-card'));
+  const countBox = document.querySelector('.result-count');
+
+  function normalize(s){ return (s || '').toLowerCase().trim(); }
+
+  function applyFilters(){
+    const q = normalize(search.value);
+    const activeChip = document.querySelector('.chip-row .chip.active');
+    const cat = activeChip ? activeChip.dataset.filter : 'all';
+    let visible = 0;
+
+    cards.forEach(card => {
+      const title = normalize(card.dataset.title);
+      const tags  = normalize(card.dataset.tags);
+      const cardCat = card.dataset.cat || 'all';
+
+      const matchText = !q || title.includes(q) || tags.includes(q);
+      const matchCat = (cat === 'all') || (cardCat === cat);
+
+      const show = matchText && matchCat;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    countBox.textContent = `${visible} tutorial${visible===1?'':'s'} shown`;
+  }
+
+  // chip events
+  chips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      applyFilters();
+    });
+  });
+
+  // search events
+  search.addEventListener('input', applyFilters);
+
+  // initial
+  applyFilters();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+})();
+</script>
+
+
+</body>
